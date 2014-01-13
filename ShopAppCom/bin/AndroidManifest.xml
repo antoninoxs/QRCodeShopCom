@@ -5,22 +5,128 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="10"
+        android:minSdkVersion="8"
         android:targetSdkVersion="10" />
 
+    <permission android:name="it.torvergata.mp.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+    <uses-permission android:name="it.torvergata.mp.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    
+    
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+    
+	 <supports-screens
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true" />
+	
+	
     <application
+        
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        
+        <receiver
+            android:name="com.google.android.gcm.GCMBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+				  <category android:name="it.torvergata.mp" />
+            </intent-filter>
+        </receiver>
+        
+        <service android:name="it.torvergata.mp.GCMIntentService" />
+        
+         
+        
         <activity
-            android:name="it.torvergata.mp.MainActivity"
+            android:name="it.torvergata.mp.activity.MainActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:configChanges="orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+           
+        </activity>
+        
+        <activity
+            android:name="it.torvergata.mp.MainNotificationActivity"
             android:label="@string/app_name" >
+        </activity>       
+        
+        <activity
+            android:name="it.torvergata.mp.activity.Registrazione"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_registrazione"
+            android:screenOrientation="portrait" >
+            >
+
+        </activity>
+        <activity
+            android:name="it.torvergata.mp.activity.tab.TabsFragmentActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+           
+            android:configChanges="orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            
+        </activity>
+        <activity
+            android:name="it.torvergata.mp.TabActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_tab"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.google.zxing.client.android.CaptureActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.zxing.client.android.SCAN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="it.torvergata.mp.activity.CameraActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_camera"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="it.torvergata.mp.activity.ProductDectailActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_product_dectail"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="it.torvergata.mp.activity.ZbarActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:label="@string/title_activity_zbar" >
         </activity>
     </application>
 

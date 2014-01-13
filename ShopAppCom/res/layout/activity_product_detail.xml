@@ -1,0 +1,164 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:weightSum="10"
+    tools:context=".CameraActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+        android:id="@+id/thumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="5dip"
+        android:background="@drawable/image_back"
+        android:padding="3dip" >
+
+        <ImageView
+            android:id="@+id/ivDetailImage"
+            android:layout_width="70dip"
+            android:layout_height="70dip"
+            android:src="@drawable/ic_launcher" />
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvTitleDetail"
+                android:layout_width="205dp"
+                android:layout_height="wrap_content"
+                android:paddingRight="5dp"
+                android:text="Large Text"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/tvQuantitativeDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medium Text"
+                android:textSize="15dip"
+        		android:textStyle="bold"
+                />
+             <TextView
+                android:id="@+id/tvSimplePrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#e02f2f"
+                android:text="Medium Text"
+                android:textSize="15dip"
+        		android:textStyle="bold"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+    
+
+    <TextView
+        android:id="@+id/tvDesriptionTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:paddingTop="10dp"
+        android:text="@string/tDescription"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+       android:layout_width="282dp"
+            android:layout_height="0dp"
+            android:layout_weight="10.12" >
+
+        <TextView
+            android:id="@+id/tvDescriptionDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Small Text"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    </ScrollView>
+	<TextView
+                android:id="@+id/tvQuantitativeChange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tChangeQuantitative"
+                android:textSize="15dip"
+        		android:textStyle="bold"
+                />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/btnChangeQuantitativeM"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/tChangeQuantitativeM" />
+
+        <EditText
+            android:id="@+id/etQuantitative"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="1" >
+
+            <requestFocus />
+        </EditText>
+            
+         <Button
+            android:id="@+id/btnChangeQuantitativeP"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/tChangeQuantitativeP" />
+       
+
+        <TextView
+            android:id="@+id/tvTotalPrice"
+               android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:gravity="right"
+            android:padding="10dp"
+            android:text="price"
+            android:textColor="#e02f2f"
+            android:textSize="20dip"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tvPriceDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        
+        <Button
+            android:id="@+id/btnListProduct"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/tProductList"
+android:layout_weight="1"/>
+
+    </LinearLayout>
+
+</LinearLayout>

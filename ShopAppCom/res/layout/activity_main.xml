@@ -2,15 +2,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity" >
+    tools:context=".MainNotificationActivity" >
 
-    <TextView
+    <EditText
+        android:id="@+id/editTextUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignBaseline="@+id/TWregistrazioneRegistrazione"
+        android:layout_alignBottom="@+id/TWregistrazioneRegistrazione"
+        android:layout_alignParentRight="true"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/TWregistrazioneRegistrazione"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="116dp"
+        android:text="@string/username" />
+
+    <TextView
+        android:id="@+id/TWregistrazioneCognome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/TWregistrazioneRegistrazione"
+        android:layout_below="@+id/editTextUsername"
+        android:layout_marginTop="36dp"
+        android:text="@string/password" />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TWregistrazioneCognome"
+        android:layout_alignBottom="@+id/TWregistrazioneCognome"
+        android:layout_alignLeft="@+id/editTextUsername"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/buttonAccess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="@string/accedi" />
+
+    <TextView
+        android:id="@+id/textViewRegistrazione"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TWregistrazioneRegistrazione"
+        android:layout_below="@+id/buttonAccess"
+        android:layout_marginTop="26dp"
+        android:text="@string/registrazione"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/btnSalta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/buttonAccess"
+        android:layout_below="@+id/textViewRegistrazione"
+        android:layout_marginTop="24dp"
+        android:text="Salta" />
 
 </RelativeLayout>
